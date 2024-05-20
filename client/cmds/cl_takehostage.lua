@@ -108,10 +108,10 @@ function callTakeHostage()
 				ensureAnimDict(takeHostage.agressor.animDict)
 				takeHostage.type = "agressor"
 			else
-				drawNativeNotification(Strings.takehostage_no_nearby)
+				drawNativeNotification(locale("takehostage_no_nearby"))
 			end
 		else
-			drawNativeNotification(Strings.takehostage_no_nearby)
+			drawNativeNotification(locale("takehostage_no_nearby"))
 		end
 	end
 end 
@@ -132,7 +132,7 @@ AddEventHandler("TakeHostage:releaseHostage", function()
 	DetachEntity(PlayerPedId(), true, false)
 	ensureAnimDict("reaction@shove")
 	TaskPlayAnim(PlayerPedId(), "reaction@shove", "shoved_back", 8.0, -8.0, -1, 0, 0, false, false, false)
-	Wait(250)
+	Citizen.Wait(250)
 	ClearPedSecondaryTask(PlayerPedId())
 end)
 
@@ -165,7 +165,7 @@ Citizen.CreateThread(function()
 				TaskPlayAnim(PlayerPedId(), takeHostage.hostage.animDict, takeHostage.hostage.anim, 8.0, -8.0, 100000, takeHostage.hostage.flag, 0, false, false, false)
 			end
 		end
-		Wait(0)
+		Citizen.Wait(0)
 	end
 end)
 
@@ -201,7 +201,7 @@ Citizen.CreateThread(function()
 				TaskPlayAnim(PlayerPedId(), "anim@gangops@hostage@", "perp_fail", 8.0, -8.0, -1, 168, 0, false, false, false)
 				TriggerServerEvent("TakeHostage:killHostage", takeHostage.targetSrc)
 				TriggerServerEvent("TakeHostage:stop",takeHostage.targetSrc)
-				Wait(100)
+				Citizen.Wait(100)
 				SetPedShootsAtCoord(PlayerPedId(), 0.0, 0.0, 0.0, 0)
 			end
 		elseif takeHostage.type == "hostage" then 
@@ -229,6 +229,6 @@ Citizen.CreateThread(function()
 			DisableControlAction(0,35,true) -- disable move right
 			DisableControlAction(0,271,true)
 		end
-		Wait(0)
+		Citizen.Wait(0)
 	end
 end)

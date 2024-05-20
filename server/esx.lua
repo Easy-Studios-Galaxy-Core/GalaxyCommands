@@ -1,9 +1,9 @@
 ESX = exports["es_extended"]:getSharedObject()
 
-RegisterNetEvent("esx:playerLoaded")
-AddEventHandler("esx:playerLoaded", function(id, xPlayer)
+-- RegisterNetEvent("esx:playerLoaded")
+-- AddEventHandler("esx:playerLoaded", function(id, xPlayer)
 
-end)
+-- end)
 
 function RegisterServerCallback(name, cb)
     ESX.RegisterServerCallback(name, cb)    
@@ -37,8 +37,7 @@ function GetPlayers()
     return ESX.GetPlayers()
 end
 
--- Path: esx/client.lua
--- TODO: Geldfunktionen
+
 function GetMoney(source)
     local xPlayer = GetPlayerFromId(source)
     return xPlayer.getMoney()

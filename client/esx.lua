@@ -19,8 +19,7 @@ Citizen.CreateThread(function()
 
     PlayerData = ESX.GetPlayerData()
     PlayerJob = ESX.GetPlayerData().job.name
-    GetPhoneNumber()
-    GetIBan()
+
 end)
 
 RegisterNetEvent('esx:playerLoaded')
@@ -41,8 +40,6 @@ RegisterNetEvent('rcore_loading:start')
 AddEventHandler('rcore_loading:start', function() 
     print("rcore_loading:start")
     PlayerLoaded = true
-    GetPhoneNumber()
-    GetIBan()
 end)
 
 RegisterNetEvent('esx:setJob')
@@ -103,8 +100,4 @@ function IsPlayerDead()
     return check
 end
 
-function GetPlateVeh(vehicle)
-    local veh = ESX.Game.GetVehicleProperties(vehicle)
-    if not veh then return false end
-    return veh.plate
-end
+

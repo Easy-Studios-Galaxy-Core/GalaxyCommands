@@ -63,7 +63,7 @@ RegisterCommand("carry",function(source, args)
 	if exports.wasabi_ambulance:isPlayerDead() then 
 		return print("Tod kein carry erlaubt")
 	end
-	if IsPedInVehicle(PlayerPedId(), true) then 
+	if IsPedInVehicle(PlayerPedId(), false) then 
 		return print("Im Fahrzeug kein carry erlaubt")
 	end
 	if exports["rpemotes"]:IsPlayerCrouched() then 
@@ -141,7 +141,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
-		Wait(0)
+		Citizen.Wait(0)
 	end
 end)
 

@@ -3,7 +3,7 @@ if not Config.Fix.Enabled then return end
 function DoPropFix()
     if lib.progressCircle({
         duration = 1500,
-        label = 'Gegenstand entfernen...',
+        label = 'Probleme Beheben...',
         position = 'bottom',
         useWhileDead = false,
         canCancel = false,
@@ -32,6 +32,8 @@ RegisterCommand("fixx", function()
     exports['17mov_Hud']:ToggleDisplay(true)
     DisplayRadar(true)
     DoPropFix()
+    exports.wasabi_ambulance:clearPlayerInjury(true)
+    ClearPedTasks(ped)
     ClearPedTasksImmediately(ped)
     exports['qs-inventory']:setInventoryDisabled(false)
     exports["rpemotes"]:CanCancelEmote(true)
