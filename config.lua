@@ -39,3 +39,17 @@ Config.Fix = {
 Config.CarryPeople = {
 	Enabled = true,
 }
+
+Config.Suicide = { 
+	Enabled = true,
+	Weapons = {
+		{hash = 'weapon_pistol'},
+		{hash = 'weapon_pistol50'},
+		{hash = 'weapon_heavypistol'},
+		{hash = 'weapon_combatpistol'},
+		{hash = 'weapon_vintagepistol'}
+	},
+	NoWeaponInHands = function()
+	
+	end
+}
